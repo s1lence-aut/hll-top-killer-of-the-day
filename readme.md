@@ -1,4 +1,4 @@
-# Discord Bot for Player Kill Tracking
+# Discord Bot for a kill count of top20 players on a HLL Server
 
 This Discord bot tracks and ranks the top players based on their kill counts in one hll game round for the whole day.
 It fetches player data from the HLL CRCON API and posts the top 20 players to a specified Discord channel.
