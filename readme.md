@@ -5,10 +5,12 @@ It fetches player data from the HLL CRCON API and posts the top 20 players to a 
 
 ## Features
 
-- Fetches detailed player data from a specified API.
+- Fetches detailed player data from HLL CRCON API.
 - Summarizes the top 20 players based on their kill counts.
 - Sends updates to a designated Discord channel.
 - Automatically updates discord every 15 seconds.
+- NOTE: currently only for v9 available
+
 
 ## Setup
 
