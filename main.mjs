@@ -4,8 +4,8 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const API_BASE_URL = process.env.API_BASE_URL;
-const API_TOKEN = process.env.API_TOKEN;
+const API_BASE_URL = process.env.RCON_API_BASE_URL;
+const API_TOKEN = process.env.RCON_API_TOKEN;
 const DISCORD_TOKEN = process.env.DISCORD_TOKEN;
 const DISCORD_CHANNEL_ID = process.env.DISCORD_CHANNEL_ID;
 
@@ -158,7 +158,7 @@ async function main() {
             .setColor('#FF0000')
             .setTitle('Error on retrieving player data')
             .setDescription('There was a problem handling the player data')
-            .setFooter({ text: 'Letzte Aktualisierung', iconURL: 'https://i.imgur.com/9Iaiwje.png' })
+            .setFooter({ text: 'Last Refresh', iconURL: 'https://i.imgur.com/9Iaiwje.png' })
             .setTimestamp();
 
         const channel = client.channels.cache.get(DISCORD_CHANNEL_ID);
