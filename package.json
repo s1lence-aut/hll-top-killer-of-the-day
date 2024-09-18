@@ -1,0 +1,20 @@
+{
+  "name": "hll-top-killer",
+  "version": "1.0.0",
+  "description": "Discord bot to track and display top Hell Let Loose players killscore",
+  "main": "main.mjs",
+  "type": "module",
+  "scripts": {
+    "start": "node main.mjs"
+  },
+  "dependencies": {
+    "discord.js": "^14.9.0",
+    "dotenv": "^16.0.3",
+    "node-fetch": "^3.3.1"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "author": "s1lence-aut",
+  "license": "MIT"
+}
