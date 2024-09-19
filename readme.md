@@ -16,7 +16,7 @@ It fetches player data from the HLL CRCON API and posts the top 20 players to a 
 
 ### Prerequisites
 
-- Node.js (v16 or newer)
+- Node.js (v18 or newer)
 - npm (Node Package Manager)
 - A Discord bot token
 - HLL CRCON API credentials for fetching player data
@@ -30,6 +30,9 @@ It fetches player data from the HLL CRCON API and posts the top 20 players to a 
    cd hll-top-killer-of-the-day
 
 2. Generate a .env File
+
+Note: RCON_API_BASE_URL should be like http://<your_vps_ip>:8010 (where 8010 is a port of your CRCON server)
+
 EXAMPLE:
 
    ```bash
