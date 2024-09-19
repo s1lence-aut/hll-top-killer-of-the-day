@@ -1,6 +1,6 @@
-# Discord Bot for a kill count of top20 players on a HLL Server
+# Discord Bot for a kill count of the top 20 players on a HLL Server running CRCON
 
-This Discord bot tracks and ranks the top players based on their kill counts in one hll game round for the whole day.
+This Discord bot tracks and ranks the top 20 players based on their kill counts in one hll game round for the whole day.
 It fetches player data from the HLL CRCON API and posts the top 20 players to a specified Discord channel.
 
 ## Features
@@ -8,8 +8,8 @@ It fetches player data from the HLL CRCON API and posts the top 20 players to a 
 - Fetches detailed player data from HLL CRCON API.
 - Summarizes the top 20 players based on their kill counts.
 - Sends updates to a designated Discord channel.
-- Automatically updates discord every 15 seconds.
-- NOTE: currently only for v9 available
+- Automatically updates Discord every 15 seconds.
+- NOTE: currently only for CRCON API v9 tested
 
 
 ## Setup
