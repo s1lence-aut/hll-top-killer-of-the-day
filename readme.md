@@ -40,6 +40,7 @@ EXAMPLE:
    DISCORD_CHANNEL_ID=your_discord_channel_id
    RCON_API_BASE_URL=your_api_base_url
    RCON_API_TOKEN=your_api_token
+   RESTART_TIME=04:00
    
 ### File Format
 
