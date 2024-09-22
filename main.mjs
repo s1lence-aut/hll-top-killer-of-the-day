@@ -1,6 +1,7 @@
 import { Client, GatewayIntentBits, EmbedBuilder } from 'discord.js';
 import fetch from 'node-fetch';
 import dotenv from 'dotenv';
+import cron from 'node-cron';
 
 dotenv.config();
 
@@ -8,6 +9,7 @@ const API_BASE_URL = process.env.RCON_API_BASE_URL;
 const API_TOKEN = process.env.RCON_API_TOKEN;
 const DISCORD_TOKEN = process.env.DISCORD_TOKEN;
 const DISCORD_CHANNEL_ID = process.env.DISCORD_CHANNEL_ID;
+const RESTART_TIME = process.env.RESTART_TIME || '04:00'; // Default to 4 AM if not specified
 
 let playerKills = {};
 let messageId = null;
@@ -50,7 +52,17 @@ async function getPlayerData() {
 
         if (data.result && data.result.players && typeof data.result.players === 'object') {
             return Object.values(data.result.players)
-                .filter(player => player && player.kills && player.kills > 0 && player.name && player.role)
+                .filter(player => {
+                    if (!player || typeof player !== 'object') {
+                        console.warn('Skipping invalid player object:', player);
+                        return false;
+                    }
+                    if (!player.kills || !player.name || !player.role) {
+                        console.warn('Skipping player with missing data:', player);
+                        return false;
+                    }
+                    return player.kills > 0;
+                })
                 .map(player => ({
                     name: player.name,
                     steam_id_64: player.steam_id_64,
@@ -168,10 +180,22 @@ async function main() {
     }
 }
 
+function scheduleRestart() {
+    const [hour, minute] = RESTART_TIME.split(':').map(Number);
+    
+    cron.schedule(`${minute} ${hour} * * *`, () => {
+        console.log('Scheduled restart initiated.');
+        process.exit(0); // Exit the process, assuming it will be automatically restarted by a process manager
+    });
+    
+    console.log(`Restart scheduled for ${RESTART_TIME} every day.`);
+}
+
 client.once('ready', () => {
     console.log('Discord bot is ready and connected.');
     setInterval(main, 15 * 1000);
     main();
+    scheduleRestart();
 });
 
 client.login(DISCORD_TOKEN);
