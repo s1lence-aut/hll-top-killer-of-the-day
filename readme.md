@@ -30,16 +30,26 @@ It fetches player data from the HLL CRCON API and posts the top 20 players to a 
 
 2. Generate a .env File
 
-Note: RCON_API_BASE_URL should be like http://<your_vps_ip>:8010 (where 8010 is a port of your CRCON server)
+Note: RCON_API_BASE_URL_1 should be like http://<your_vps_ip>:8010 (where 8010 is a port of your CRCON server)
 
 EXAMPLE:
 
    ```bash
    DISCORD_TOKEN=your_discord_bot_token
    DISCORD_CHANNEL_ID=your_discord_channel_id
-   RCON_API_BASE_URL=your_api_base_url
-   RCON_API_TOKEN=your_api_token
+   Support multiple servers by appending _X to their respective fields, where X is a number. For example:
+   RCON_SERVER_NAME_1=your_server_name
+   RCON_API_BASE_URL_1=your_api_base_url
+   RCON_API_TOKEN_1=your_api_token
+   RCON_SERVER_NAME_2=your_server_name
+   RCON_API_BASE_URL_2=your_api_base_url
+   RCON_API_TOKEN_2=your_api_token
    RESTART_TIME=04:00 (UTC)
+
+Support multiple servers by appending _X to their respective fields, where X is a number.
+
+If you have the old version: It is required to update the single server setups to append _1 to the end of these fields.
+
    
 ### File Format
 
