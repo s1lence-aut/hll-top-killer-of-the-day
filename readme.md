@@ -37,7 +37,6 @@ EXAMPLE:
    ```bash
    DISCORD_TOKEN=your_discord_bot_token
    DISCORD_CHANNEL_ID=your_discord_channel_id
-   Support multiple servers by appending _X to their respective fields, where X is a number. For example:
    RCON_SERVER_NAME_1=your_server_name
    RCON_API_BASE_URL_1=your_api_base_url
    RCON_API_TOKEN_1=your_api_token
