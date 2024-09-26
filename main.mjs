@@ -57,7 +57,7 @@ async function getPlayerData() {
                         console.warn('Skipping invalid player object:', player);
                         return false;
                     }
-                    if (!player.kills || !player.name || !player.role) {
+                    if (player.kills === undefined || !player.name || !player.role) {
                         console.warn('Skipping player with missing data:', player);
                         return false;
                     }
