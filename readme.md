@@ -37,10 +37,10 @@ EXAMPLE:
    ```bash
    DISCORD_TOKEN=your_discord_bot_token
    DISCORD_CHANNEL_ID=your_discord_channel_id
-   RCON_SERVER_NAME_1=your_server_name
+   RCON_API_SERVER_NAME_1=your_server_name
    RCON_API_BASE_URL_1=your_api_base_url
    RCON_API_TOKEN_1=your_api_token
-   RCON_SERVER_NAME_2=your_server_name
+   RCON_API_SERVER_NAME_2=your_server_name
    RCON_API_BASE_URL_2=your_api_base_url
    RCON_API_TOKEN_2=your_api_token
    RESTART_TIME=04:00 (UTC)
